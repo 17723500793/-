@@ -1,0 +1,32 @@
+.box {
+
+    display: grid;
+    grid-template-rows: repeat(1 200px);
+    grid-template-columns: repeat(4 150px);
+    grid-template-areas: 'a b c';
+    gap: 60px;
+    
+}
+
+.a {
+    background-color: black;
+    width: 150px;
+    height: 200px;
+    transition-duration: 2ms;
+    transition-timing-function: linear;
+    grid-area: a;
+}
+
+.b {
+    border: 1px solid red;
+    width: 150px;
+    height: 200px;
+    grid-area: b;
+}
+
+.c {
+    border: 1px solid red;
+    width: 150px;
+    height: 200px;
+    grid-area: c;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"style="width: 500px;height: 500px;border: 1px solid red">
+   <ul class="ul">
+
+   </ul>
+</div>
+<button id="button" onclick="handleClick()">发送</button>
+ <input id="EleId" type="text" >
+ 
+</body>
+
+</html>
+<script>
+    let text = document.getElementById("EleId")
+    let div=document.getElementById("div")
+    var ul = document.querySelector('ul');
+
+    function handleClick()
+    {
+        if(text.value=='')
+        {
+            alert('不能发布空消息！');
+            return false;
+        }
+        else{
+        let value=text.value;
+        var li = document.createElement('li');
+        li.innerHTML=value+"<a  href='javascript:;'title='删除该留言'>删除</a>";
+          ul.insertBefore(li,ul.children[0]);
+          let a=document.querySelectorAll('a');
+        for (let i = 0; i < a.length; i++) {
+            a[i].onclick=function(){
+                ul.removeChild(this.parentNode);
+            }
+            
+        }
+    }
+
+    }
+       
+</script>

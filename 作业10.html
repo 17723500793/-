@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"id="name">
+    <button id="send" onclick="send()">发送</button>
+
+</body>
+</html>
+<script>
+    let a=document.getElementById("name")
+function send(){
+    let b=a.value;
+    // console.log(b);
+    // fetch("http://8.142.81.74:8080/hello?name="+b)
+    // .then(Response=>Response.json())
+    // .then(data=>console.log(data));
+const obj = {name:b};
+const method = "POST";
+const body = Object.keys(obj).reduce((o,key)=>(o.set(key, obj[key]), o), new FormData());
+const headers = {
+  'Accept': 'application/json'
+};
+fetch("http://172.20.10.11:13570/user/login/hello", {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
+}
+
+
+</script>

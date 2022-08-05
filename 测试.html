@@ -1,0 +1,23 @@
+<script>
+function demo(num) {
+  setTimeout(function () {
+    console.log("1");
+    if (num > 5) {
+      setTimeout(function () {
+        console.log(num);
+      }, 500);
+    } else {
+      setTimeout(function () {
+        console.log("3");
+        setTimeout(function () {
+          console.log("4");
+          setTimeout(function () {
+            console.log("5");
+          }, 3000);
+        }, 500);
+      }, 500);
+    }
+  }, 500);
+}
+demo(2);
+</script>
